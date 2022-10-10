@@ -71,23 +71,27 @@
                     <img src="{{ asset('assets/images/logo-banking.png') }}" alt="" class="img-fluid w-50">
                 </div>
                 <div class="text-center p-5">
-                    <h3>Welcome back!</h3>
-                    <p>Don't have an account? <a href="{{route('register')}}">Create an account <i class="fa mx-2 fa-arrow-right"></i></a>
+                    <h3>Create an account</h3>
+                    <p>Already have an account? <a href="{{ url('/') }}"> Login <i class="fa fa-arrow-right mx-2"></i></a>
                     </p>
                 </div>
-                <form class="login-form row" method="POST" action="{{route('login')}}">
+                <form class="login-form row" method="POST" action="{{route('client-register')}}">
                     @csrf
+                    <div class="col-md-12 mb-3">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                            required>
+                    </div>
                     <div class="col-md-12 mb-3">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email ID"
                             required>
                     </div>
                     <div class="col-md-12 mb-3">
                         <input id="password-field" type="password" class="form-control" name="password"
-                            placeholder="Passowrd">
+                            placeholder="Enter passowrd" required>
                         <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     </div>
                     <div class="col-md-12 mb-3 text-center">
-                        <button class="btn btn-primary" type="submit">Login<i
+                        <button class="btn btn-primary" type="submit">Sign up <i
                                 class="fa fa-arrow-right mx-2"></i></button>
                     </div>
                 </form>

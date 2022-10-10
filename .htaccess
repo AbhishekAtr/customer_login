@@ -1,0 +1,30 @@
+AddHandler application/x-httpd-php73 .php
+<IfModule mod_suphp.c>
+    suPHP_ConfigPath /opt/php73/lib
+</IfModule>
+
+
+<IfModule mod_rewrite.c>
+ #Session timeout
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+RewriteEngine On
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ ^$1 [N]
+RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
+RewriteRule ^(.*)$ public/$1
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ server.php
+</IfModule>
+# Disable index view
+Options -Indexes
+# Hide a specific file
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
