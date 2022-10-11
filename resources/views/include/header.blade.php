@@ -4,8 +4,8 @@
 
     <header class="header shadow" id="header">
         <div class="header_toggle">
-            <button type="button" class="btn btn-lg btn-alt-secondary" data-toggle="layout" data-action="sidebar_toggle">
-                <i class="fa fa-fw fa-bars" id="header-toggle"></i>
+            <button type="button" class="btn btn-lg btn-alt-secondary">
+                <i class="fa fa-fw fa-bars text-dark" id="header-toggle"></i>
             </button>
             {{-- <button type="button" class="btn btn-lg btn-alt-secondary" data-toggle="layout"
                 data-action="header_search_on">
@@ -19,7 +19,7 @@
         </style>
         <ul class="list-unstyled">
             <li class="dropdown nav-item admin-drop">
-                <a class="nav-link" href="javascript:void(0)">Admin<i
+                <a class="nav-link m-auto" href="javascript:void(0)">Admin<i
                         class="fas fa-chevron-down fa-xs mx-2"></i></a>
                 <ul class="dropdown-menu rounded" style="right: -20px">
                     <li>
@@ -41,7 +41,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('logout')}}">
                             <span>Sign Out</span>
                             <i class="fa fa-fw fa-sign-out-alt"></i>
                         </a>
@@ -59,7 +59,7 @@
                 </a>
                 <div class="nav_list">
                     <a href="{{ route('dashboard') }}" class="nav_link active">
-                        <i class='fa fa-table nav_icon'></i>
+                        <i class='fa fa-home nav_icon'></i>
                         <span class="nav_name">Dashboard</span>
                     </a>
                     <a href="{{ route('listing') }}" class="nav_link">
@@ -234,6 +234,15 @@
             height: 100vh
         }
 
+        @media screen and (max-width: 768px) {
+            .l-navbar {
+                left: -52%;
+            }
+            body{
+                position: fixed;
+            }
+        }
+
         @media screen and (min-width: 768px) {
             body {
                 margin: calc(var(--header-height) + 1rem) 0 0 0;
@@ -256,7 +265,7 @@
 
             .l-navbar {
                 left: 0;
-                padding: 1rem 1rem 0 0
+                padding: 1rem 1rem 0 0;
             }
 
             .show {

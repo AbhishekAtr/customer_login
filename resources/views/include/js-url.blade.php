@@ -91,7 +91,7 @@
                     // show navbar
                     nav.classList.toggle('show')
                     // change icon
-                    toggle.classList.toggle('bx-x')
+                    toggle.classList.toggle('fa-times')
                     // add padding to body
                     bodypd.classList.toggle('body-pd')
                     // add padding to header
