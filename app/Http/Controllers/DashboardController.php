@@ -10,4 +10,9 @@ class DashboardController extends Controller
     {
         return view('pages.dashboard');
     }
+
+    public function formData(Request $request)
+    {
+        return view('pages.listing');
+    }
 }

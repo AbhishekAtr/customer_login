@@ -27,3 +27,5 @@ Route::get('registration',[RegistrationController::class,'index'])->name('regist
 Route::post('client-registration',[RegistrationController::class,'register'])->name('client-register');
 
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'); 
+
+Route::get('listing', [DashboardController::class, 'formData'])->name('listing'); 
